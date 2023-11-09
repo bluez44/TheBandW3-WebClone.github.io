@@ -7,14 +7,29 @@
     <link rel="stylesheet" href="./access/font-icon/themify-icons/themify-icons.css">
     <title>Document</title>
 </head>
+
 <body>
     <div id="main">
+        <div id="buy-page">
+            <div class="buy-container">
+                <h3><i class="ti-bag"></i> Tickets </h3>
+                <div class="buy-infor">
+                    <p><i class="ti-shopping-cart"></i> Tickets, $15 per person</p>
+                    <input type="text" class="customer-name" placeholder="How many?">
+                    <p><i class="ti-user"></i> Send to</p> 
+                    <input type="email" class="customer-email" placeholder="Enter email">
+                    <button class="pay-bttn">Pay<i class="ti-check"></i></Button>
+                    <button class="close-bttn">Close <i class="ti-close"></i></button>
+                    <p class="help-bttn">Need<a href="#"> help?</a></p>
+                </div>
+            </div>
+        </div>
         <div id="header">
             <ul id="nav">
                 <li><a href="">home</a></li>
-                <li><a href="">band</a></li>
-                <li><a href="">tour</a></li>
-                <li><a href="">contact</a></li>
+                <li><a href="#BAND">band</a></li>
+                <li><a href="#TOUR">tour</a></li>
+                <li><a href="#CONTACT">contact</a></li>
                 <li>
                     <a href="">more <i class="ti-angle-double-down"></i></a>
                     <ul class="subnav">
@@ -37,7 +52,7 @@
 
         <div id="content">
             <!-- About section-->
-            <div class="content-section">
+            <div class="content-section" id="BAND">
                 <h2 class="section-heading">the band</h2>
                 <p class="section-subheading">We love music</p>
                 <p class="about-text">
@@ -61,9 +76,10 @@
 
                 </div>
             </div>
+            <!-- End of About section-->
 
             <!-- Tour section-->
-            <div class="tour-section black-background">
+            <div class="tour-section black-background" id="TOUR">
                 <div class="content-section">
                     <h2 class="section-heading white-text">Tour dates</h2>
                     <p class="section-subheading white-text">remember to book your tickets!</p>
@@ -106,11 +122,39 @@
                     </div>
                 </div>
             </div>
-            
+            <!-- End of Tour section-->
+
+            <!-- Contact section-->
+            <div class="content-section" id="CONTACT">
+                <h2 class="section-heading">contact</h2>
+                <p class="section-subheading">Fan? Drop a note!</p>
+                <ul class="contact-infor">
+                    <li><i class="ti-location-pin"></i>Chicago, US</li>
+                    <li><i class="ti-headphone-alt"></i>Phone: +00 151515</li>
+                    <li><i class="ti-email"></i>Email: mail@mail.com</li>
+                </ul>
+
+                <div class="contact-customer">
+                    <input type="text" class="customer-name" placeholder="Name">
+                    <input type="text" class="customer-email" placeholder="Email">
+                    <input type="text" class="customer-message" placeholder="Message">
+                    <button>send</button>
+                </div>
+            </div>
+            <!-- End of Contact section-->
+
+            <!-- MAP--> 
+            <img src="./access/img/map.jpg" alt="" style="width: 100%;">
         </div>
 
         <div id="footer">
-            
+            <i class="ti-facebook"></i>
+            <i class="ti-instagram"></i>
+            <i class="ti-pinterest"></i>
+            <i class="ti-twitter-alt"></i>
+            <i class="ti-linux"></i>
+            <i class="ti-linkedin"></i>
+            <p>Power by <a href="#" style="color: #000;">w3.css</a></p>
         </div>
     </div>
 </body>
