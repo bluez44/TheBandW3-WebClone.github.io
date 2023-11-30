@@ -96,7 +96,7 @@
                                 <p class="tour-places">New York</p>
                                 <p class="tour-time">Fri 27 Nov 2016</p>
                                 <p class="tour-discribe">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-                                <button class="tour-buy-bttn">buy tickets</button>
+                                <button class="tour-buy-bttn js-buy-bttn">buy tickets</button>
                             </div>
                         </div>
 
@@ -106,7 +106,7 @@
                                 <p class="tour-places">Paris</p>
                                 <p class="tour-time">Fri 27 Nov 2016</p>
                                 <p class="tour-discribe">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-                                <button class="tour-buy-bttn">buy tickets</button>
+                                <button class="tour-buy-bttn js-buy-bttn">buy tickets</button>
                             </div>
                         </div>
 
@@ -116,7 +116,7 @@
                                 <p class="tour-places">San Fransisco</p>
                                 <p class="tour-time">Fri 27 Nov 2016</p>
                                 <p class="tour-discribe">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-                                <button class="tour-buy-bttn">buy tickets</button>
+                                <button class="tour-buy-bttn js-buy-bttn">buy tickets</button>
                             </div>
                         </div>
                     </div>
@@ -157,5 +157,35 @@
             <p>Power by <a href="#" style="color: #000;">w3.css</a></p>
         </div>
     </div>
+
+    <script>
+        const buyBttns = document.querySelectorAll('.js-buy-bttn')
+        const buyPage = document.querySelector('#buy-page')
+        const buyPageContainer = document.querySelector('.buy-container')
+        const closeBttn = document.querySelector('.close-bttn')
+
+        function showBuyPage() {
+            buyPage.classList.add('buy-page-open')
+        }
+        
+        function closeBuyPage() {
+            buyPage.classList.remove('buy-page-open')
+        }
+
+        for(const buyBttn of buyBttns ) {
+            buyBttn.addEventListener('click',showBuyPage)
+        }
+
+        buyPage.addEventListener('click',closeBuyPage)
+        closeBttn.addEventListener('click',closeBuyPage)
+        
+        buyPageContainer.addEventListener('click', function(event) {
+            event.stopPropagation()
+        })
+
+    </script>
+
+  
+
 </body>
 </html>

@@ -29,13 +29,20 @@
     top: 0;
 }
 
+.buy-page-open {
+    display: block !important;
+}
+
 #buy-page .buy-container {
     background-color: #fff;
     color: #000;
-    max-width: 900px;
+    width: 900px;
+    max-width: calc(100% - 48px);
     margin: 0 auto;
     margin-top: 20%;
+    animation: buyPageFadeIn ease 0.8s;
 }
+
 
 .buy-container h3 {
     background-color: #009688;
@@ -99,6 +106,17 @@
 .buy-infor input {
     width: 100%;
     padding: 15px 8px;
+}
+
+@keyframes buyPageFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-500px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Begin: header */
