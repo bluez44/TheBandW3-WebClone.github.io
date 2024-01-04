@@ -134,6 +134,16 @@
     display: inline-block;
 }
 
+#header .menu {
+    display: none;
+}
+
+.newmenu-open {
+    display: block !important;
+    background-color: #ccc;
+}
+
+
 #header #nav li{
     display: inline-block;
     position: relative;
@@ -243,7 +253,7 @@
 }
 
 #content .content-section {
-    width: 800px;
+    width: 75%;
     margin: 0 auto;
     padding: 64px 16px;
     font-family: sans-serif;
@@ -423,18 +433,20 @@
 }
 
 .contact-customer .customer-name {
+    width: 50%;
     float: left;
 }
 
 .contact-customer .customer-email {
     float: right;
+    width: 45%;
 }
 
 .contact-customer .customer-message {
     width: 100%;
 } 
 
-.contact-customer button {
+.contact-customer .submit-bttn {
     float: right;
     background-color: #000;
     color: #fff;
@@ -442,10 +454,11 @@
     margin: 16px 0;
     border: none;
     text-transform: uppercase;
+    text-decoration: none;
     font-size: 15px;
 }
 
-.contact-customer button:hover {
+.contact-customer .submit-bttn:hover {
     cursor: pointer;
     background-color: #ccc;
     color: #000;
@@ -471,3 +484,86 @@
     font-family: sans-serif;
 }
 /* End: footer */
+
+@media (min-width: 1024px) {    /* desktop */
+
+}
+
+@media (min-width: 740px) and (max-width: 1024px) {    /* tablet */
+
+}
+
+@media (max-width: 740px) {    /* mobile */
+    .member-group .member-infor {
+        text-align: center;
+        width: 100%;
+    }
+
+    .tour-infor {
+        float: left;
+        width: 100%;
+        padding: 0 8px;
+        margin-bottom: 16px;
+    }
+
+    .content-section .contact-infor {
+        display: block;
+        width: 100%;   
+        line-height: 27px;
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    .content-section .contact-customer {
+        width: 100%;
+        font-size: 15px;
+    }
+
+    #header .search {
+        display: none;
+    }
+
+    #header #nav {
+        position: absolute;
+        top: 0;
+        left: 0 ;
+        padding-top: 42px;
+        display: none;
+        width: 100%`;
+        height: 100rem;
+        background-color: rgba(0, 0, 0, 0.6);
+    }
+
+    #header .menu {
+        display: block;
+        width: 46px;
+        height: 46px;
+        font-size: 20px;
+        color: #ffff;
+        text-align: center;
+        line-height: 46px;
+    }
+
+    #header .menu:active {
+        background-color: #f44336;
+    }
+
+    #header #nav li {
+        display: block;
+    }
+
+    #header #nav a {
+        padding: 0 12px;
+
+    }
+
+    #header #nav .subnav {
+        font-size: 15px;
+        line-height: 46px;
+        text-transform: uppercase;
+    }
+    
+    #nav li:hover .subnav {
+        width: 100%;
+    }
+}

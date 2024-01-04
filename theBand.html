@@ -25,6 +25,7 @@
             </div>
         </div>
         <div id="header">
+            <i class="ti-menu-alt menu"></i>
             <ul id="nav">
                 <li><a href="">home</a></li>
                 <li><a href="#BAND">band</a></li>
@@ -135,10 +136,10 @@
                 </ul>
 
                 <div class="contact-customer">
-                    <input type="text" class="customer-name" placeholder="Name">
-                    <input type="text" class="customer-email" placeholder="Email">
-                    <input type="text" class="customer-message" placeholder="Message">
-                    <button>send</button>
+                    <input type="text" required class="customer-name" placeholder="Name">
+                    <input type="email" required class="customer-email" placeholder="Email">
+                    <input type="text" required class="customer-message" placeholder="Message">
+                    <input type="submit" value="SEND" class="submit-bttn">                    
                 </div>
             </div>
             <!-- End of Contact section-->
@@ -163,6 +164,8 @@
         const buyPage = document.querySelector('#buy-page')
         const buyPageContainer = document.querySelector('.buy-container')
         const closeBttn = document.querySelector('.close-bttn')
+        const menu = document.querySelector('.menu')
+        const nav = document.querySelector('#header #nav')
 
         function showBuyPage() {
             buyPage.classList.add('buy-page-open')
@@ -176,13 +179,26 @@
             buyBttn.addEventListener('click',showBuyPage)
         }
 
+        
         buyPage.addEventListener('click',closeBuyPage)
         closeBttn.addEventListener('click',closeBuyPage)
         
+        
         buyPageContainer.addEventListener('click', function(event) {
             event.stopPropagation()
-        })
+        })  
+        
+        function showNewMenu() {
+            nav.classList.add('newmenu-open')
+        }
 
+        function closeNewMenu() {
+            nav.classList.remove('newmenu-open')
+        }
+
+
+        menu.addEventListener('click',showNewMenu)
+        nav.addEventListener('click',closeNewMenu)
     </script>
 
   
