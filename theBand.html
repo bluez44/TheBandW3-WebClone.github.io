@@ -10,6 +10,7 @@
 
 <body>
     <div id="main">
+        <div id="page-header"></div>
         <div id="buy-page">
             <div class="buy-container">
                 <h3><i class="ti-bag"></i> Tickets </h3>
@@ -26,22 +27,26 @@
         </div>
         <div id="header">
             <i class="ti-menu-alt menu"></i>
-            <ul id="nav">
-                <li><a href="">home</a></li>
-                <li><a href="#BAND">band</a></li>
-                <li><a href="#TOUR">tour</a></li>
-                <li><a href="#CONTACT">contact</a></li>
-                <li>
-                    <a href="">more <i class="ti-angle-double-down"></i></a>
-                    <ul class="subnav">
-                        <li><a href="">Merchandise</a></li>
-                        <li><a href="">Extras</a></li>
-                        <li><a href="">Media</a></li>
-                    </ul>
-                </li>
-            </ul>
-
+            
+            <div class="nav-container">
+                <ul id="nav">
+                    <li class="js-menu-member"><a href="#page-header">home</a></li>
+                    <li class="js-menu-member"><a href="#BAND">band</a></li>
+                    <li class="js-menu-member"><a href="#TOUR">tour</a></li>
+                    <li class="js-menu-member"><a href="#CONTACT">contact</a></li>
+                    <li class="js-sub-menu">
+                        <a >more <i class="ti-angle-double-down"></i></a>
+                        <ul class="subnav">
+                            <li class="js-menu-member"> <a>Merchandise</a></li>
+                            <li class="js-menu-member"> <a>Extras</a></li>
+                            <li class="js-menu-member"> <a>Media</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            
             <div class="search"><i class="search-icon ti-search"></i></div>
+            
         </div>
 
         <div id="slider">
@@ -164,9 +169,7 @@
         const buyPage = document.querySelector('#buy-page')
         const buyPageContainer = document.querySelector('.buy-container')
         const closeBttn = document.querySelector('.close-bttn')
-        const menu = document.querySelector('.menu')
-        const nav = document.querySelector('#header #nav')
-
+        
         function showBuyPage() {
             buyPage.classList.add('buy-page-open')
         }
@@ -174,11 +177,11 @@
         function closeBuyPage() {
             buyPage.classList.remove('buy-page-open')
         }
-
+        
         for(const buyBttn of buyBttns ) {
             buyBttn.addEventListener('click',showBuyPage)
         }
-
+        
         
         buyPage.addEventListener('click',closeBuyPage)
         closeBttn.addEventListener('click',closeBuyPage)
@@ -189,16 +192,44 @@
         })  
         
         function showNewMenu() {
-            nav.classList.add('newmenu-open')
+            nav.classList.toggle('newmenu-open')
+            nav_conatiner.classList.toggle('container-open')
+            subnav.classList.remove('show-subnav')
         }
-
+        
         function closeNewMenu() {
             nav.classList.remove('newmenu-open')
+            nav_conatiner.classList.remove('container-open')
+            subnav.classList.remove('show-subnav')
         }
 
+        function showSubnav() {
+            subnav.classList.toggle('show-subnav')
+        }
+
+        const menu = document.querySelector('.menu')
+        const nav = document.querySelector('#header #nav')
+        const nav_conatiner = document.querySelector('.nav-container')
+        const menu_member = document.querySelectorAll('.js-menu-member')
+        const submenu = document.querySelector('.js-sub-menu')
+        const subnav = document.querySelector('.subnav')
 
         menu.addEventListener('click',showNewMenu)
-        nav.addEventListener('click',closeNewMenu)
+        submenu.addEventListener('click', showSubnav)
+        
+        for(const selector of menu_member) {
+            selector.addEventListener('click', closeNewMenu)
+        }
+
+        nav_conatiner.addEventListener('click', closeNewMenu)
+
+        nav.addEventListener('click', function(event) {
+            event.stopPropagation()
+        }) 
+
+        subnav.addEventListener('click', function(event) {
+            event.stopPropagation()
+        })
     </script>
 
   
